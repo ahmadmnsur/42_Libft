@@ -192,4 +192,22 @@ strdup | creates a new string by duplicating an existing null-terminated string 
 |External ft.|None|
 |Description|	Adds the node new at the end of the list pointed to by lst. If lst is NULL, the function initializes the list with new as the first node.|
 
+|Function name|	ft_lstdelone|
+|:--------------------|:--------|
+|Prototype|	void ft_lstdelone(t_list *lst, void (*del)(void *));|
+|Turn in files|-|
+|Parameters|	<b>lst</b>: The node to free. <br> <b>del</b>: The address of the function used to delete the content.|
+|Return value|None|
+|External ft.|free|
+|Description	|Takes as a parameter a node lst and frees the memory of the node’s content using the function del given as a parameter, and then frees the node itself. The memory of the next pointer must not be freed.|
+
+|Function name	|ft_lstclear|
+|:--------------------|:--------|
+|Prototype|	void ft_lstclear(t_list **lst, void (*del)(void *));|
+|Turn in files|-|
+|Parameters|	<b>lst</b>: The address of a pointer to a node. <br> <b>del</b>: The address of the function used to delete the content of the node.|
+|Return value|None|
+|External ft.|free|
+|Description| Deletes and frees the given node and every successor of that node, using the function del to delete the content of each node and free(3) to free the memory. Finally, sets the pointer to the list (lst) to NULL.|
+
 ---
