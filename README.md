@@ -35,7 +35,6 @@ strdup | creates a new string by duplicating an existing null-terminated string 
 
 ---
 
-<h3><b>¤ Part 2: Additional functions ¤</b></h3>
 
 |Function name        |ft_substr|
 |:--------------------|:--------|
@@ -145,5 +144,52 @@ strdup | creates a new string by duplicating an existing null-terminated string 
 |Return value|None|
 |External ft.|write|
 |Description|Outputs the integer ’n’ to the given file descriptor.|
+
+<h2><b>¤ Bonus functions ¤</b></h2>
+
+|Function name	|ft_lstnew|
+|:--------------------|:--------|
+|Prototype	t_list| *ft_lstnew(void *content);|
+|Turn in files|-|
+|Parameters	content:| The content to create the node with.|
+|Return value|	The new node|
+|External ft.|	malloc|
+|Description|	Allocates (with malloc(3)) and returns a new node. The member variable content is initialized with the value of the parameter content. The variable next is initialized to NULL.|
+
+|Function name|	ft_lstadd_front|
+|:--------------------|:--------|
+|Prototype|	void ft_lstadd_front(t_list **lst, t_list *new);|
+|Turn in files|-|
+|Parameters|	<b>lst</b>: The address of a pointer to the first link of a list. <br> <b>new<b>: The address of a pointer to the node to be added to the list.|
+|Return value|None|
+|External ft.|None|
+|Description|	Adds the node new at the beginning of the list pointed to by lst.|
+
+|Function name|	ft_lstsize|
+|:--------------------|:--------|
+|Prototype|	int ft_lstsize(t_list *lst);|
+|Turn in|files|-|
+|Parameters|	<b>lst<b>: The beginning of the list.|
+|Return value|	The length of the list|
+|External ft.|	None|
+|Description|	Counts the number of nodes in a list.|
+
+|Function name|	ft_lstlast|
+|:--------------------|:--------|
+|Prototype|	t_list *ft_lstlast(t_list *lst);|
+|Turn in files|-|
+|Parameters|	<b>lst</b>: The beginning of the list.|
+|Return value|	Last node of the list|
+|External ft.|None|
+|Description|	Returns the last node of the list. If the list is empty (lst is NULL), returns NULL.|
+
+|Function name|	ft_lstadd_back|
+|:--------------------|:--------|
+|Prototype|	void ft_lstadd_back(t_list **lst, t_list *new);|
+|Turn in files|-|
+|Parameters| <b>lst</b>: The address of a pointer to the first link of a list. <br> <b>new</b>: The address of a pointer to the node to be added to the list.|
+|Return value|None|
+|External ft.|None|
+|Description|	Adds the node new at the end of the list pointed to by lst. If lst is NULL, the function initializes the list with new as the first node.|
 
 ---
