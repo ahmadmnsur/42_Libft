@@ -210,4 +210,22 @@ strdup | creates a new string by duplicating an existing null-terminated string 
 |External ft.|free|
 |Description| Deletes and frees the given node and every successor of that node, using the function del to delete the content of each node and free(3) to free the memory. Finally, sets the pointer to the list (lst) to NULL.|
 
+|Function name|	ft_lstiter|
+|:--------------------|:--------|
+|Prototype|	void ft_lstiter(t_list *lst, void (*f)(void *));|
+|Turn in files|-|
+|Parameters|	<b>lst</b>: The address of a pointer to a node. <br> <b>f</b>: The address of the function used to iterate on the list.|
+|Return value|None|
+|External ft.|None|
+|Description| Iterates through the list lst and applies the function f to the content of each node. The function f should take a void * parameter representing the content of the node.|
+
+|Function name|	ft_lstmap|
+|:--------------------|:--------|
+|Prototype| t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));|
+|Turn in files|-|
+|Parameters| <b>lst</b>: The address of a pointer to a node. <br> <b>f</b>: The address of the function used to iterate on the list. <br> <b>del</b>: The address of the function used to delete the content of a node if needed.|
+|Return value|	The new list. NULL if the allocation fails.|
+|External ft.|	malloc, free|
+|Description|	Iterates through the list lst and applies the function f to the content of each node. Creates a new list resulting from the successive applications of the function f. The del function is used to delete the content of a node if needed (e.g., during error handling or cleanup). Returns a pointer to the new list. If memory allocation fails during the creation of the new list, returns NULL.|
+
 ---
